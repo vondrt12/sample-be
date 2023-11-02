@@ -1,0 +1,79 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="2020-11-05_zma_01" author="mznamenacek">
+        <createTable tableName="gr_store">
+            <column name="id" type="${type.common.id}" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cmpn_num" type="bigint">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="2020-11-05_zma_02" author="mznamenacek">
+        <createTable tableName="gr_animal">
+            <column name="id" type="${type.common.id}" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="store_id" type="${type.common.fk}">
+                <constraints nullable="false" foreignKeyName="store_fk" referencedTableName="gr_store"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="type" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="color" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="price" type="decimal(12,2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="public_note" type="varchar(1000)"/>
+            <column name="secret_note" type="varchar(1000)"/>
+            <column name="created" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2020-11-16_zma_01" author="mznamenacek">
+        <createTable tableName="gr_user">
+            <column name="id" type="${type.common.id}" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="first_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="varchar(150)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="image_url" type="varchar(500)"/>
+            <column name="password" type="varchar(100)"/>
+            <column name="provider" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="provider_id" type="VARCHAR(100)"/>
+            <column name="created" type="timestamp" remarks="Record created time">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated" type="timestamp" remarks="Record last updated time">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

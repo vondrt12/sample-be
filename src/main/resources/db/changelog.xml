@@ -1,0 +1,27 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <!-- format for CSV data -->
+    <property name="csv.separator" value=";"/>
+    <property name="csv.encoding" value="UTF-8"/>
+
+    <!-- obecne typy -->
+    <property name="type.common.id" value="bigserial"/>
+    <property name="type.common.fk" value="bigint"/>
+
+    <!-- typy pro ciselniky -->
+    <property name="type.codelist.code.numeric" value="bigint"/>
+    <property name="type.codelist.code.string" value="varchar(100)"/>
+    <property name="type.codelist.code.type" value="varchar(30)"/>
+    <property name="type.codelist.name" value="varchar(255)"/>
+
+    <changeSet id="2019-05-09_pma_000" author="pmarek">
+        <tagDatabase tag="empty"/>
+    </changeSet>
+
+    <include file="changelog_01.X.xml" relativeToChangelogFile="true"/>
+    <include file="data_01.X.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

@@ -1,0 +1,46 @@
+package eu.greyson.sample.shared.dto;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import eu.greyson.sample.shared.enums.ConfigKey;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+@RequiredArgsConstructor
+public class Configuration {
+
+    @Getter
+    @NotNull
+    private final ConfigKey key;
+
+    @NotBlank
+    private final String value;
+
+    @JsonIgnore
+    public Integer getValueAsInteger() {
+        return Integer.valueOf(value.trim());
+    }
+
+    @JsonIgnore
+    public Long getValueAsLong() {
+        return Long.valueOf(value.trim());
+    }
+
+    @JsonIgnore
+    public Short getValueAsShort() {
+        return Short.valueOf(value.trim());
+    }
+
+    @JsonIgnore
+    public Byte getValueAsByte() {
+        return Byte.valueOf(value.trim());
+    }
+
+    @JsonIgnore
+    public String getValueAsString() {
+        return value;
+    }
+
+}
