@@ -7,7 +7,10 @@ import lombok.Data;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
+import java.time.LocalDateTime;
+
 @Data
+@Schema(description = "user information")
 public class UserDto {
 
     @NotNull
@@ -22,13 +25,8 @@ public class UserDto {
     @Schema(description = "User last name")
     private String lastName;
 
-    @NotBlank
-    @Schema(description = "User email name")
-    private String email;
+    @NotNull
+    @Schema(description = "User birth date")
+    private LocalDateTime birthDate;
 
-    @Schema(description = "User image url")
-    private String imageUrl;
-
-    @Schema(description = "Auth provider")
-    private AuthProvider provider;
 }

@@ -13,6 +13,7 @@ public class WebConfig implements WebMvcConfigurer {
         registry
                 .addMapping("/**")
                 .allowedOrigins(
+                        "http://192.168.1.134:3000",
                         "http://localhost:4200",
                         "https://devel.greyson.eu")
                 .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
