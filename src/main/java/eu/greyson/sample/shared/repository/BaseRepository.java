@@ -1,13 +1,14 @@
 package eu.greyson.sample.shared.repository;
 
 import eu.greyson.sample.shared.model.BaseEntity;
+import jakarta.persistence.EntityNotFoundException;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.NoRepositoryBean;
+
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Optional;
 import java.util.stream.Stream;
-import jakarta.persistence.EntityNotFoundException;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.NoRepositoryBean;
 
 /**
  * Contains elementary functions.

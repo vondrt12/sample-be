@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.exc.InvalidTypeIdException;
 import eu.greyson.sample.shared.dto.ExceptionDto;
 import eu.greyson.sample.shared.dto.ValidationErrorDto;
 import eu.greyson.sample.shared.exception.*;
+import jakarta.persistence.EntityNotFoundException;
+import jakarta.validation.ValidationException;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.springframework.http.HttpStatus;
@@ -16,8 +18,6 @@ import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import jakarta.persistence.EntityNotFoundException;
-import jakarta.validation.ValidationException;
 import java.util.List;
 import java.util.stream.Collectors;
 

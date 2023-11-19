@@ -1,8 +1,9 @@
 package eu.greyson.sample.general.rest;
+
 import eu.greyson.sample.general.dto.AccountDto;
-import eu.greyson.sample.general.dto.requests.CardBlockRequest;
 import eu.greyson.sample.general.dto.CardDto;
 import eu.greyson.sample.general.dto.TransactionDto;
+import eu.greyson.sample.general.dto.requests.CardBlockRequest;
 import eu.greyson.sample.general.dto.requests.TransactionRequest;
 import eu.greyson.sample.shared.swagger.ApiResponses_200_400_401_404_500;
 import eu.greyson.sample.shared.swagger.ApiResponses_200_401_404_500;
@@ -42,7 +43,7 @@ public interface AccountController {
             description = "This endpoint creates new transaction with given account as creditor."
     )
     @ApiResponses_201_400_401_404_500
-    ResponseEntity<TransactionDto> makeCreditorTransaction(@NotNull Long id, @NotNull TransactionRequest transaction);
+    ResponseEntity<TransactionDto> addCreditorTransaction(@NotNull Long id, @NotNull TransactionRequest transaction);
 
     @Operation(
             summary = "Account's cards endpoint",

@@ -3,10 +3,11 @@ package eu.greyson.sample.shared.service;
 import eu.greyson.sample.shared.dto.Configuration;
 import eu.greyson.sample.shared.enums.ConfigKey;
 import eu.greyson.sample.shared.exception.ConfigurationException;
-import java.util.Optional;
 import lombok.AllArgsConstructor;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor

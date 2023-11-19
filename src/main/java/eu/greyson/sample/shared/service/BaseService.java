@@ -3,9 +3,9 @@ package eu.greyson.sample.shared.service;
 import eu.greyson.sample.shared.exception.UnknownSqlException;
 import eu.greyson.sample.shared.model.BaseEntity;
 import eu.greyson.sample.shared.repository.BaseRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.dao.DataIntegrityViolationException;
 
-import jakarta.persistence.EntityNotFoundException;
 import java.io.Serializable;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;

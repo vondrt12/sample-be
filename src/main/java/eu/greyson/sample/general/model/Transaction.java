@@ -2,13 +2,14 @@ package eu.greyson.sample.general.model;
 
 import eu.greyson.sample.shared.model.BaseEntity;
 import eu.greyson.sample.shared.validators.ValidTransaction;
-import jakarta.persistence.*;
-import jakarta.validation.Valid;
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDateTime;
 

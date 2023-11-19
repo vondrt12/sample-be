@@ -1,8 +1,9 @@
 package eu.greyson.sample.general.rest.impl;
+
 import eu.greyson.sample.general.dto.AccountDto;
-import eu.greyson.sample.general.dto.requests.CardBlockRequest;
 import eu.greyson.sample.general.dto.CardDto;
 import eu.greyson.sample.general.dto.TransactionDto;
+import eu.greyson.sample.general.dto.requests.CardBlockRequest;
 import eu.greyson.sample.general.dto.requests.TransactionRequest;
 import eu.greyson.sample.general.rest.AccountController;
 import eu.greyson.sample.general.service.AccountService;
@@ -32,14 +33,14 @@ public class AccountControllerImpl implements AccountController {
     }
 
     @Override
-    @GetMapping("{accountId}/Transactions")
+    @GetMapping("{accountId}/transactions")
     public ResponseEntity<List<TransactionDto>> getTransactionsWithAccountId(@PathVariable Long accountId) {
         return ResponseEntity.ok(accountService.getTransactionsWithAccountId(accountId));
     }
 
     @PostMapping("{accountId}/transactions")
     @Override
-    public ResponseEntity<TransactionDto> makeCreditorTransaction(@PathVariable Long accountId, @RequestBody TransactionRequest transaction) {
+    public ResponseEntity<TransactionDto> addCreditorTransaction(@PathVariable Long accountId, @RequestBody TransactionRequest transaction) {
         TransactionDto savedTransaction = accountService.addTransaction(accountId, transaction.getDebtor(), transaction.getAmount());
         return ResponseEntity
                 .status(HttpStatus.CREATED)

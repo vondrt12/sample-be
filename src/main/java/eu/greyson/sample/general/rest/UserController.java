@@ -1,9 +1,9 @@
 package eu.greyson.sample.general.rest;
+
 import eu.greyson.sample.general.dto.UserDto;
 import eu.greyson.sample.shared.swagger.ApiResponses_200_401_404_500;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.validation.constraints.NotNull;
 import org.springframework.http.ResponseEntity;
 
 @Tag(name = "User", description = "User controller")

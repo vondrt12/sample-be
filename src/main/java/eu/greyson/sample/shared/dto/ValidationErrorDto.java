@@ -1,11 +1,10 @@
 package eu.greyson.sample.shared.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.validation.FieldError;
-
-import jakarta.validation.constraints.NotEmpty;
 
 @Data
 @AllArgsConstructor

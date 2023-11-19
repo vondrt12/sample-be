@@ -2,11 +2,10 @@ package eu.greyson.sample.shared.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import eu.greyson.sample.shared.enums.ConfigKey;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public class Configuration {
